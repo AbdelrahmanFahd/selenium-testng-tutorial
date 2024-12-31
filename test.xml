@@ -1,18 +1,38 @@
 <suite name="Suite" verbose="1">
-    <test name="Test">
+    <parameter name="data Type" value="10"/>
+    <!--    <test name="Test">-->
+    <!--        <classes>-->
+    <!--            <class name="TestNG">-->
+    <!--                <methods>-->
+    <!--                    <include name="test1"/>-->
+    <!--                    <exclude name="test2"/>-->
+    <!--                </methods>-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+
+    <test name="Test 1">
+        <parameter name="browser" value="firefox"/>
         <classes>
-            <class name="TestNG">
-                <methods>
-                    <include name="test1"/>
-                    <exclude name="test2"/>
-                </methods>
-            </class>
+            <class name="parameter"/>
         </classes>
     </test>
 
-    <test name="Test">
+    <test name="Test 2">
+        <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="TestNG"/>
+            <class name="parameter"/>
         </classes>
     </test>
+
+    <test name="Test 3">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <class name="parameter"/>
+        </classes>
+    </test>
+
+    <listeners>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    </listeners>
 </suite>

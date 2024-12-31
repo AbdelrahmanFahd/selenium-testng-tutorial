@@ -27,17 +27,17 @@ public class TestNG {
         System.out.println("Before Test Case");
     }
 
-    @Test
+    @Test(priority = 1)
     public void testOne() {
         System.out.println(1);
     }
 
-    @Test
+    @Test(priority = 2)
     public void testTwo() {
         System.out.println(2);
     }
 
-    @Test
+    @Test(priority = 3)
     public void testThree() {
         System.out.println(3);
     }
