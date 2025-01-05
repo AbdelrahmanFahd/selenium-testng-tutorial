@@ -19,6 +19,7 @@ public class TestNGTest {
         int x = 11;
         int y = 20;
         int sum = x + y;
+
         // ------- Assertion -------
         // Assert.assertEquals(Actual, Expected, Message); TestNG
         // assertEquals(Message, Expected, Actual); JUnit
@@ -46,6 +47,26 @@ public class TestNGTest {
 //        softAssert.assertTrue(sum >= 50);
 //        softAssert.assertAll();
 
+        // ------- Fail -------
+        // If this line is executed, the test will fail
+//        Assert.fail("This is a fail message");
+
+        // ------- Annotation -------
+        // ------- Suite -------
+        // ------- Test -------
+        // ------- Class -------
+        // ------- Method -------
+        // ------- Before Suite -------
+        // ------- Before Test -------
+        // ------- Before Class -------
+        // ------- Before Test Case -------
+        // ------- Test Case -------
+        // ------- After Test Case -------
+        // ------- After Class -------
+        // ------- After Test -------
+        // ------- After Suite -------
+        // ------- Before Method -------
+        // ------- After Method -------
 
     }
 

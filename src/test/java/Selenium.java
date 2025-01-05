@@ -2,6 +2,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import org.testng.Assert;
 
 import javax.swing.*;
 import java.security.Key;
@@ -13,17 +14,14 @@ public class Selenium {
     public static void main(String[] args) throws InterruptedException {
         // ------------ WebDriver ---------------------
         WebDriver driver = new ChromeDriver();
+        driver.get("https://www.google.com.eg");
 //        driver.get("https://the-internet.herokuapp.com/login");
-//
 //        driver.switchTo().newWindow(WindowType.TAB);
-//        Thread.sleep(1000);
-//
 //        driver.manage().window().maximize();
 //        driver.manage().window().maximize();
 //        driver.manage().window().setSize(new Dimension(4,15));
 //        driver.close();
 //        driver.quit();
-
 //         ------------ Navigation ---------------------
 //        driver.navigate().to("https://the-internet.herokuapp.com/login");
 //        driver.navigate().back();
@@ -35,7 +33,42 @@ public class Selenium {
 //        System.out.println(driver.getCurrentUrl());
 //        System.out.println(driver.getPageSource());
 
+        // ------------ Web Elements ---------------------
+        // <tag attribute = "value"> Text </tag>
+        // <tag attribute = "value" />
+        // <tag> Text </tag>
+        // <tag />
         // ------------ Locators ---------------------
+        // id
+        // name
+        // className
+        // tagName
+        // linkText
+        // partialLinkText
+        // cssSelector
+        // xpath
+        // ------------ XPath ---------------------
+        // Absolute XPath
+        // Relative XPath
+        // ------------ XPath Syntax ---------------------
+        // //tag[@attribute = "value"]
+        // //tag[@attribute = "value" and @attribute = "value"]
+        // //tag[@attribute = "value" or @attribute = "value"]
+        // //tag[@attribute = "value" and contains(@attribute, "value")]
+        // //tag[@attribute = "value" and starts-with(@attribute, "value")]
+        // //tag[@attribute = "value" and ends-with(@attribute, "value")]
+        // //tag[@attribute = "value" and text() = "value"]
+        // //tag[@attribute = "value" and text() = "value" and contains(text(), "value")]
+        // //tag[@attribute = "value" and text() = "value" and starts-with(text(), "value")]
+        // //tag[@attribute = "value" and text() = "value" and ends-with(text(), "value")]
+        // //tag[@attribute = "value" and text() = "value" and text() = "value"]
+        // //tag[@attribute = "value" and text() = "value" and text() = "value" and contains(text(), "value")]
+        // //tag[@attribute = "value" and text() = "value" and text() = "value" and starts-with(text(), "value")]
+        // //tag[@attribute = "value" and text() = "value" and text() = "value" and ends-with(text(), "value")]
+        // //tag[@attribute = "value" and text() = "value" and text() = "value" and text() = "value"]
+        // //tag[@attribute = "value" and text() = "value" and text() = "value" and text() = "value" and contains(text(), "value")]
+        // ------------ XPath Examples ---------------------
+        // ------------ XPath Syntax ---------------------
 //        // < tag attribute = "value" > Text </tag>
 //
 //        // tag[attribute = "value"]
@@ -48,10 +81,13 @@ public class Selenium {
 //
 //        // //div[@id="content"]//h2
 
-
+        // ------------ CSS Selector ---------------------
+        // tag[attribute = "value"]
+        // tag#id
+        // tag.class
+        // tag.class.class
+        // tag[attribute = "value"][attribute = "value"]
         // ------------ Find Element ---------------------
-
-
 //        WebElement username = driver.findElement(By.id("username"));
 //        WebElement password = driver.findElement(By.id("password"));
 //        WebElement loginButton = driver.findElement(By.cssSelector("button[type=\"submit\"]"));
@@ -146,28 +182,27 @@ public class Selenium {
         // ------------- Wait Strategies -----------------
 
         // Implicit Wait
-        driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
-        driver.findElement(By.cssSelector("#start button")).click();
+//        driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
+//        driver.findElement(By.cssSelector("#start button")).click();
 
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-        // Explicit Wait
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//        // Explicit Wait
+//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#finish h4")));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#loading")));
+//        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("#loading")));
 //        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector("#loading"))));
-        System.out.println(driver.findElement(By.cssSelector("#finish h4")).getText());
-
-        // Fluent Wait
-        Wait<WebDriver> fluentWait = new FluentWait<>(driver)
-                .withTimeout(Duration.ofSeconds(30))
-                .pollingEvery(Duration.ofSeconds(5))
-                .ignoring(NoSuchElementException.class)
-                .ignoring(TimeoutException.class);
-        WebElement finishElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#finish h4")));
+//        System.out.println(driver.findElement(By.cssSelector("#finish h4")).getText());
+//
+//        // Fluent Wait
+//        Wait<WebDriver> fluentWait = new FluentWait<>(driver)
+//                .withTimeout(Duration.ofSeconds(30))
+//                .pollingEvery(Duration.ofSeconds(5))
+//                .ignoring(NoSuchElementException.class)
+//                .ignoring(TimeoutException.class);
+//        WebElement finishElement = fluentWait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#finish h4")));
 
 //        System.out.println(finishElement.getText());
-
 
     }
 }
